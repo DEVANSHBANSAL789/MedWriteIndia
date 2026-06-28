@@ -1,4 +1,5 @@
 // Central data store for courses
+// Updated course levels for production
 export const courses = [
   {
     id: 1,
