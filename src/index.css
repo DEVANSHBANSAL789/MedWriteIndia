@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-sans text-gray-800 bg-white;
+  }
+
+  ::selection {
+    @apply bg-emerald-200 text-emerald-900;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-emerald-800 text-white font-medium rounded-lg transition-all duration-200 hover:bg-emerald-900 hover:shadow-lg active:scale-95 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 border-2 border-emerald-800 text-emerald-800 font-medium rounded-lg transition-all duration-200 hover:bg-emerald-800 hover:text-white active:scale-95 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2;
+  }
+
+  .btn-white {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-white text-emerald-800 font-medium rounded-lg transition-all duration-200 hover:bg-emerald-50 hover:shadow-lg active:scale-95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
+  }
+
+  .btn-outline-white {
+    @apply inline-flex items-center gap-2 px-6 py-3 border-2 border-white text-white font-medium rounded-lg transition-all duration-200 hover:bg-white hover:text-emerald-800 active:scale-95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
+  }
+
+  .section-padding {
+    @apply py-16 lg:py-20;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .card {
+    @apply bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .badge-emerald {
+    @apply badge bg-emerald-50 text-emerald-700 border border-emerald-200;
+  }
+
+  .badge-gray {
+    @apply badge bg-gray-100 text-gray-600 border border-gray-200;
+  }
+
+  .notice-box {
+    @apply bg-emerald-50 border border-emerald-200 rounded-xl p-6;
+  }
+
+  .section-heading {
+    @apply text-3xl lg:text-4xl font-bold text-gray-800;
+  }
+
+  .section-subtext {
+    @apply text-lg text-gray-600 mt-3 max-w-3xl;
+  }
+
+  .chip {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-100;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-emerald {
+    background: linear-gradient(135deg, #065f46 0%, #064e3b 100%);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(6,79,58,0.35) 100%);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .aspect-video-custom {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Hero slider transition */
+.slide-enter {
+  opacity: 0;
+  transform: scale(1.05);
+}
+
+.slide-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.slide-exit {
+  opacity: 1;
+}
+
+.slide-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+/* YouTube modal */
+.youtube-modal-overlay {
+  @apply fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4;
+  backdrop-filter: blur(4px);
+}
+
+/* Accordion smooth */
+.accordion-content {
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Mega menu */
+.mega-menu {
+  @apply absolute top-full left-0 w-full bg-white shadow-xl border-t border-emerald-100;
+  transform-origin: top;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Page hero breadcrumb link */
+.breadcrumb-link {
+  @apply text-emerald-300 hover:text-white transition-colors duration-150;
+}
+
+/* Custom scrollbar for sidebar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a7f3d0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #059669;
+}
